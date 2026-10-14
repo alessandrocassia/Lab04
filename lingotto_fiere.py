@@ -20,6 +20,7 @@ class LingottoFiere:
     def __str__(self):
         return f"Nome: {self.nome}"
 
+
     def carica_file_dati(self, file_path):
         """Carica i dati (stand ed espositori) dal file"""
         try:
@@ -52,7 +53,6 @@ class LingottoFiere:
                 else: #ho uno stand premium
                     sp = StandPremium(record[0], int(record[1]), record[2], float(record[3]), record[4]) #creo un oggetto stand premium
                     self.lista_stand.append(sp)
-
 
     def assegna_stand_a_espositore(self, codice_stand, codice_espositore):
         """Associa uno stand a un espositore"""
@@ -90,13 +90,18 @@ class LingottoFiere:
             raise Exception("L'espositore indicato è già stato associato ad uno stand")
         else: espositore_trovato.stand_associato = stand_trovato
 
-        # TODO ALE
-        #perché non provi a creare delle funzioni che vengono chiamate nella funzione grande? per maggiore pulizia del codice
-
     def elenca_espositori(self):
         """Stampa l'elenco degli espositori mostrando, per ognuno, lo stand a cui è associato, quando applicabile """
-        # TODO
+
+        for espositore in self.lista_espositori:
+            stand_per_stampa = ""
+            if espositore.stand_associato is None:
+                stand_per_stampa = "Non c'è alcuno stand associato a questo espositore"
+            else:
+                stand_per_stampa = espositore.stand_associato.codice
+            print(f"{espositore}, Stand associato: {stand_per_stampa}")
 
     def stand_ordinati_per_prezzo(self):
         """Restituisce la lista ordinata degli stand in base al prezzo"""
-        # TODO
+        stand_ordinati = sorted(self.lista_stand)
+        return stand_ordinati
