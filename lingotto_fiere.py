@@ -10,15 +10,15 @@ class LingottoFiere:
         self.lista_stand = []
         self.lista_espositori = []
 
+    def __str__(self):
+        return f"Nome: {self.nome}"
+
     @property
     def nome(self):
         return self.__nome
     @nome.setter
     def nome(self, nome):
         self.__nome = nome
-
-    def __str__(self):
-        return f"Nome: {self.nome}"
 
 
     def carica_file_dati(self, file_path):
