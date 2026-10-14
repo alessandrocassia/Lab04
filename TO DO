@@ -1,0 +1,15 @@
+1. aggiungere metodo str alle classi figlie di stand
+
+2. aggiungere qualche function in lingotto_fiere.py per snellire quelle già esistenti
+   (insomma le funzioni da implementare per il lab devono richiamare altre funzioni)
+
+3. debugga metodo di assegnazione stand-espositori e verifica come rendere indisponibile un espositore
+   (forse semplicemente al posto di assegnare None all'attributo posso assegnare una stringa "Occupato/libero")
+
+4. metodo di elenco espositori
+
+5. metodo di elenco stand per prezzo
+
+6. migliorare la leggibilità dei metodi __str__
+
+7. ricontrollare readme per varie ed eventuali
